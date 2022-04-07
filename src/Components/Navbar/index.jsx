@@ -4,13 +4,13 @@ import { Link as RoutedLink } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
 import { FaBars } from 'react-icons/fa'
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   return (
     <>
       <Nav>
         <NavBarContainer>
           <NavLogo to="/">MegaJS</NavLogo>
-          <MobileIcon><FaBars /></MobileIcon>
+          <MobileIcon onClick={toggle}><FaBars /></MobileIcon>
           <NavMenu>
             <NavItem>
               <NavLinks to='/'>Home</NavLinks>

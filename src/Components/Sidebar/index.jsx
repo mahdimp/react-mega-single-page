@@ -5,9 +5,9 @@ import { Link as ScrollLink } from 'react-scroll'
 import { Link as RoutedLink } from 'react-router-dom'
 
 
-function Sidebar() {
+function Sidebar({isOpen, toggle}) {
     return (
-        <SideBarContainer>
+        <SideBarContainer isOpen={isOpen} onClick={toggle}>
             <Icon>
                 <CloseIcon />
             </Icon>
@@ -34,11 +34,11 @@ const SideBarContainer = styled.div`
     height: 100%;
     display: grid;
     align-items: center;
-    top: 0;
+    top: ${({isOpen}) => (isOpen ? '0' : '-100%')};
+    opacity: ${({isOpen})=> (isOpen ? '1' : '0')};
     left: 0;
     transition: 0.3s ease;
-    opacity: 100%;
-    z-index: 99;
+    z-index: 9999;
 `
 
 const SideBarWrapper = styled.div``
