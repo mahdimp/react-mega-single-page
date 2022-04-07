@@ -68,7 +68,7 @@ const NavLogo = styled(RoutedLink)`
   text-decoration: none;
 `
 
-export const MobileIcon = styled.div`
+const MobileIcon = styled.div`
   display: none;
 
   @media screen and (max-width: 768px) {
@@ -83,7 +83,7 @@ export const MobileIcon = styled.div`
   }
 `
 
-export const NavMenu = styled.ul`
+const NavMenu = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
@@ -95,11 +95,11 @@ export const NavMenu = styled.ul`
   }
 `
 
-export const NavItem = styled.li`
+const NavItem = styled.li`
   height: 80px;
 `
 
-export const NavLinks = styled(ScrollLink)`
+const NavLinks = styled(ScrollLink)`
   color: #fff;
   display: flex;
   align-items: center;
@@ -112,7 +112,7 @@ export const NavLinks = styled(ScrollLink)`
   }
 `
 
-export const NavBtn = styled.nav`
+const NavBtn = styled.nav`
   display: flex;
   align-items: center;
 
@@ -121,7 +121,7 @@ export const NavBtn = styled.nav`
   }
 `
 
-export const NavBtnLink = styled(RoutedLink)`
+const NavBtnLink = styled(RoutedLink)`
   border-radius: 50px;
   background: #fab209;
   text-decoration: none;
