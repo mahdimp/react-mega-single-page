@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const InfoSection = ({
     id,
     lightBg,
-    imgStart,
+    imgFirst,
     topLine,
     heading,
     description,
@@ -18,7 +18,7 @@ const InfoSection = ({
     return (
         <InfoContainer lightBg={lightBg} id={id}>
             <InfoWrapper>
-                <InfoRow imgStart={imgStart}>
+                <InfoRow imgFirst={imgFirst}>
                     <ColumnText>
                         <TextWrapper>
                             <TopLine>{topLine}</TopLine>

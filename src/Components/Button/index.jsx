@@ -18,7 +18,7 @@ export const Button = styled(Link)`
     font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
 
     &:hover {
-        background: ${({ primary }) => primary ? '#010606' : '#fab209'};
+        background: ${({ primary }) => primary ? '#fff' : '#fab209'};
     }
 
 

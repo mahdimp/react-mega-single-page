@@ -18,7 +18,7 @@ const HeroSection = () => {
                 <HeroH1>Javascript is the king</HeroH1>
                 <HeroP>Learn JS and Frameworks</HeroP>
                 <HeroButtonWrapper>
-                    <Button $primary to="/" onMouseEnter={onHover} onMouseLeave={onHover}>
+                    <Button primary={true} dark={true} to="/" onMouseEnter={onHover} onMouseLeave={onHover}>
                         Get Started {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
                 </HeroButtonWrapper>

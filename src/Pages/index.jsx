@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import HeroSection from '../Components/HeroSection'
 import InfoSection from '../Components/InfoSection'
-import { aboutInfoData } from '../Components/InfoSection/infoElements'
+import { aboutInfoData, blogInfoData, coursesInfoData, roadMapInfoData } from '../Components/InfoSection/infoElements'
 import Navbar from '../Components/Navbar'
 import Sidebar from '../Components/Sidebar'
 
@@ -18,6 +18,9 @@ function Home() {
             <Navbar toggle={toggle} />
             <HeroSection/>
             <InfoSection {...aboutInfoData} />
+            <InfoSection {...coursesInfoData} />
+            <InfoSection {...blogInfoData} />
+            <InfoSection {...roadMapInfoData} />
         </>
     )
 }
