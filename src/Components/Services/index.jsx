@@ -74,7 +74,7 @@ const ServicesContent = styled.div`
 const ServicesTitle = styled.h2`
     font-size: 2.5rem;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 3rem;
 
     @media screen and (max-width: 480px) {
         font-size: 2rem;
