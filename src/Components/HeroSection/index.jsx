@@ -36,6 +36,17 @@ const HeroContainer = styled.div`
     height: 800px;
     position: relative;
     z-index: 1;
+
+    :before{
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom:0;
+        z-index: 2;
+        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    }
 `
 
 const HeroBg = styled.div`
