@@ -3,6 +3,7 @@ import HeroSection from '../Components/HeroSection'
 import InfoSection from '../Components/InfoSection'
 import { aboutInfoData, blogInfoData, coursesInfoData, roadMapInfoData } from '../Components/InfoSection/infoElements'
 import Navbar from '../Components/Navbar'
+import Services from '../Components/Services'
 import Sidebar from '../Components/Sidebar'
 
 function Home() {
@@ -21,6 +22,7 @@ function Home() {
             <InfoSection {...coursesInfoData} />
             <InfoSection {...blogInfoData} />
             <InfoSection {...roadMapInfoData} />
+            <Services />
         </>
     )
 }
