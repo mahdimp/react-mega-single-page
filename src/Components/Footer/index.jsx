@@ -1,8 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { animateScroll as scroll } from 'react-scroll'
 import { Link } from 'react-router-dom'
+import { FaTwitter, FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa'
 
 const Footer = () => {
+    const navigateTop = () => {
+        scroll.scrollToTop()
+    }
     return (
         <Container>
             <Wrapper>
@@ -40,6 +45,26 @@ const Footer = () => {
                         </LinksItem>
                     </LinksWrapper>
                 </LinksContainer>
+                <SocialMediaContainer>
+                    <SocialMediaWrapper>
+                        <SiteTitle to={'/'} onClick={navigateTop}>Megajs</SiteTitle>
+                        <SiteCopyRight>Megajs copy rights 2022</SiteCopyRight>
+                        <Icons>
+                            <IconLink>
+                                <FaFacebook />
+                            </IconLink>
+                            <IconLink>
+                                <FaYoutube />
+                            </IconLink>
+                            <IconLink>
+                                <FaInstagram />
+                            </IconLink>
+                            <IconLink>
+                                <FaTwitter />
+                            </IconLink>
+                        </Icons>
+                    </SocialMediaWrapper>
+                </SocialMediaContainer>
             </Wrapper>
         </Container>
     )
@@ -111,5 +136,52 @@ const FooterLink = styled(Link)`
         color: #fab209;
     }
 `
+
+const SocialMediaContainer = styled.div`
+    max-width: 100%;
+    width: 1024px;
+`
+
+const SocialMediaWrapper = styled.div`
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width:1000;
+    margin: 40px auto 0 auto;
+
+    @media screen and (max-width: 820px) {
+        flex-direction: column;
+    }
+`
+
+const SiteTitle = styled(Link)`
+    color:#fff;
+    display: flex;
+    cursor: pointer;
+    font-size:1.2rem;
+    align-items:center;
+    font-weight:bold;
+    margin-bottom: 16px;
+    text-decoration: none;
+
+`
+
+const SiteCopyRight = styled.div`
+    color: #fff;
+    margin-bottom: 16px;
+`
+
+const Icons = styled.div`
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+`
+
+const IconLink = styled.div`
+    color: #fff;
+    font-size:24px;
+`
+
 
 export default Footer

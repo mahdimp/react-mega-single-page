@@ -1,31 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link as RoutedLink } from 'react-router-dom'
-import { Link as ScrollLink } from 'react-scroll'
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
 import { FaBars } from 'react-icons/fa'
 
 const Navbar = ({ toggle }) => {
+  const [scrolled, setScrolled] = useState(false)
+
+  const navIsScrolled = () => {
+    window.scrollY >= 80 ? setScrolled(true) : setScrolled(false)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', navIsScrolled)
+  })
+
+  const navigateTop = () => {
+    scroll.scrollToTop()
+  }
+
   return (
     <>
-      <Nav>
+      <Nav scrolled={scrolled}>
         <NavBarContainer>
-          <NavLogo to="/">MegaJS</NavLogo>
+          <NavLogo onClick={navigateTop} to="/">MegaJS</NavLogo>
           <MobileIcon onClick={toggle}><FaBars /></MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to='/'>Home</NavLinks>
+              <NavLinks onClick={navigateTop} to='/'>Home</NavLinks>
+            </NavItem>  
+            <NavItem>
+              <NavLinks to='about' duration={500} smooth={true} spy={true} offset={-80}>About</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='about'>About</NavLinks>
+              <NavLinks to='courses' duration={500} smooth={true} spy={true} offset={-80}>Courses</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='courses'>Courses</NavLinks>
+              <NavLinks to='blog' duration={500} smooth={true} spy={true} offset={-80}>Blog</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='blog'>Blog</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to='road-map'>Road-map</NavLinks>
+              <NavLinks to='road-map' duration={500} smooth={true} spy={true} offset={-80}>Road-map</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
@@ -38,7 +52,8 @@ const Navbar = ({ toggle }) => {
 }
 
 const Nav = styled.div`
-  background-color: #000;
+  background-color: ${({ scrolled }) => scrolled ? '#010606' : 'transparent'};
+  margin-top: -80px;
   color: #fff;
   height: 80px;
   display: flex;
@@ -109,6 +124,7 @@ const NavLinks = styled(ScrollLink)`
   text-decoration: none;
   padding : 0 1rem;
   height: 100% ;
+  cursor: pointer;
 
   &.active{
     border-bottom: 3px solid #fab209;
